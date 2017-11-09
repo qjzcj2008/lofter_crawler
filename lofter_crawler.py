@@ -126,7 +126,7 @@ class TextWriter(object):
         if not os.path.isdir(filename):
             os.mkdir(filename)
         file_path = os.path.join(filename, '0.'+filename+'.txt')
-        self.file = open(file_path, 'w')
+        self.file = open(file_path, 'w',encoding='utf-8')
 
     def close(self):
         self.file.close()
