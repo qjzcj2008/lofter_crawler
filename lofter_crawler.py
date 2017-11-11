@@ -44,7 +44,7 @@ def page_download_n_parse(url, proxies=None, timeout=None, retry_times=0):
         else:
             print('无法下载页面，请稍后再重试，或使用代理IP。')
     pattern = re.compile(r'<img src="(http://imglf\d?\.(?:nosdn\.127|ph\.126)'
-                         r'\.net(?:/img)?/\S+?\.jpg)\S*?"')
+                         r'\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"')
     image_urls = re.findall(pattern, resp.text)
     html = etree.HTML(resp.text)
     # 这里只是某个模板的 text 和 tags 抓取方式， 无法通过 re 进行爬取, 只能特定修改。
