@@ -69,6 +69,4 @@ $ python lofter_crawler.py -b blogname1 [-b blogname2]
 因 lofter 博客样式较多，Tags, 博客内容文本只能在特定格式下，才能记录。
 <br />
 
-### 那么，就这样，福利愉快。。。
-![福利](fl.jpg)
-
+### 那么，就这样，使用愉快。。。
