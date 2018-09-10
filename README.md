@@ -5,21 +5,43 @@ lofter_crawler
 
 <br />
 
+UPDATE
+-----------
+
+lofter在最近加入了一些反爬机制<br />
+大体是在第一次访问页面时进行302跳转至源地址，同时设置一个cookies，再利用js计算第二个sign，并也set cookies，要想正常访问页面就需要同时携带第一个sign和js_sign<br />
+不过最近没什么时间研究了，先搞了一个临时解决方案，由以前直接requests抓取转为利用headless browser进行页面的渲染，然后进行处理。<br />
+现在就需要同时安装selenium依赖和headless browser的依赖来进行，同时爬虫的静默性也有一定的影响，等之后有时间在看好了。
+<br />
+
 环境安装
 -------
 
-配置 Python3 环境(Python2下没有测试过)，然后打开命令行模式，输入如下命令。
+配置 Python3 环境(Python2运行不可)，然后打开命令行模式，输入如下命令。
 
 ```shell
-$ git clone git@github.com:guzdy/lofter_crawler.git
+$ git clone git@github.com:qjzcj2008/lofter_crawler.git
 $ cd lofter-crawler
 $ pip install -r requirements.txt
 ```
 
+Temporary
+```shell
+$ git clone git@github.com:qjzcj2008/lofter_crawler.git
+$ cd lofter-crawler
+$ pip install -r requirements.txt
+$ pip install selenium
+```
+
+chromedriver官网下载地址：http://chromedriver.storage.googleapis.com/index.html<br />
+IE浏览器驱动下载地址为：http://selenium-release.storage.googleapis.com/index.html<br />
+Firefox驱动下载地址为：https://github.com/mozilla/geckodriver/releases/<br />
+同时需要配置PATH
 
 配置和运行
 ---------
 
+临时反爬解决方案使用lofter_crawler_temporary.py<br /><br />
 有两种方式来指定你要下载的博客，一是编辑"config.ini"，二是指定命令行参数。
 <br />
 
