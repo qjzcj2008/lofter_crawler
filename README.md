@@ -20,19 +20,21 @@ lofter在最近加入了一些反爬机制<br />
 配置 Python3 环境(Python2运行不可)，然后打开命令行模式，输入如下命令。
 
 ```shell
-$ git clone git@github.com:qjzcj2008/lofter_crawler.git
+$ git clone https://github.com/qjzcj2008/lofter_crawler.git
 $ cd lofter-crawler
 $ pip install -r requirements.txt
 ```
 
 Temporary
 ```shell
-$ git clone git@github.com:qjzcj2008/lofter_crawler.git
+$ git clone https://github.com/qjzcj2008/lofter_crawler.git
 $ cd lofter-crawler
-$ pip install -r requirements.txt
+$ pip install -r requirements_temporary.txt
 $ pip install selenium
+$ curl https://intoli.com/install-google-chrome.sh | bash
 ```
 
+chrome安装可参考：https://intoli.com/blog/installing-google-chrome-on-centos/<br />
 chromedriver官网下载地址：http://chromedriver.storage.googleapis.com/index.html<br />
 IE浏览器驱动下载地址为：http://selenium-release.storage.googleapis.com/index.html<br />
 Firefox驱动下载地址为：https://github.com/mozilla/geckodriver/releases/<br />
