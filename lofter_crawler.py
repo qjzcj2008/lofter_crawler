@@ -22,6 +22,7 @@ HEADERS = {
 PROCESSES = multiprocessing.cpu_count()
 
 Regex_Pattern = r'<img src="(http://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.126))\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"'
+Regex_Pattern_v2 = r'bigimgsrc="(http://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.126))\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"'
 
 def find_latest_page(blogname):
     """ 查找首页, 并返回博客最近更新子页面 """
@@ -46,7 +47,7 @@ def page_download_n_parse(url, proxies=None, timeout=None, retry_times=0):
             print('无法下载页面，请稍后再重试，或使用代理IP。')
     pattern = re.compile(r'<img src="(http://imglf\d?\.(?:nosdn\.127|ph\.126)'
                          r'\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"')
-    image_urls = re.findall(Regex_Pattern, resp.text)
+    image_urls = re.findall(Regex_Pattern_v2, resp.text)
     html = etree.HTML(resp.text)
     # 这里只是某个模板的 text 和 tags 抓取方式， 无法通过 re 进行爬取, 只能特定修改。
     text = html.xpath('string(//div[@class="ctc box"]/div[@class="text"])')
