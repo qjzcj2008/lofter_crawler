@@ -26,7 +26,7 @@ Regex_Pattern_v2 = r'bigimgsrc="(http://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.
 
 def find_latest_page(blogname):
     """ 查找首页, 并返回博客最近更新子页面 """
-    url = "http://{}.lofter.com".format(blogname)
+    url = "https://{}.lofter.com".format(blogname)
     print("尝试下载首页并抓取需要的数据： ", url)
     resp = requests.get(url, headers=HEADERS)
     pattern = re.compile(url+r'(/post/\S+)"')
