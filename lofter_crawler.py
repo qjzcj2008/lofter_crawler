@@ -22,7 +22,7 @@ HEADERS = {
 PROCESSES = multiprocessing.cpu_count()
 
 Regex_Pattern = r'<img src="(http://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.126))\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"'
-Regex_Pattern_v2 = r'bigimgsrc="(http://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.126))\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"'
+Regex_Pattern_v2 = r'(?:bigimg|small)src="(http[s]://imglf\d?\.(?:nosdn\d?(?:\.127|ph\.126|\.126))\.net(?:/img)?/\S+?\.(?:jpg|png|jpeg|gif))\S*?"'
 
 def find_latest_page(blogname):
     """ 查找首页, 并返回博客最近更新子页面 """
